@@ -1,0 +1,36 @@
+{
+  "name": "node-express-starter",
+  "version": "0.0.1",
+  "private": true,
+  "description": "An express starter.",
+  "author": "SunSeekerX",
+  "main": "src/app.js",
+  "scripts": {
+    "serve": "nodemon src/app.js",
+    "lint": "eslint \"src/**/*.js\" --fix",
+    "lint:lint-staged": "lint-staged",
+    "gc": "git add -A && git-cz && git pull && git push",
+    "up": "yarn upgrade-interactive",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "cookie-parser": "~1.4.5",
+    "cors": "^2.8.5",
+    "express": "~4.17.1",
+    "http-errors": "~1.8.0",
+    "internal-ip": "^6.2.0",
+    "morgan": "~1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.0.1",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2"
+  }
+}
