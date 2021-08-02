@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-07-16 16:34:03
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-16 18:05:15
+ * @LastEditTime: 2021-08-02 16:05:30
  */
 
 const express = require('express')
@@ -12,11 +12,15 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const internalIp = require('internal-ip')
-
-const ipv4 = internalIp.v4.sync()
 const chalk = require('chalk')
 
+const log = require('./utils/log')
 const indexRouter = require('./routes/index')
+const getEnv = require('./config/index')
+
+const ipv4 = internalIp.v4.sync()
+
+console.log(getEnv('port'))
 
 const app = express()
 const port = 3000
@@ -30,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
 
-// catch 404 and forward to error handler
+// Catch 404 and forward to error handler
 app.use((req, res, next) => {
   res.json({
     code: 404,
@@ -38,9 +42,10 @@ app.use((req, res, next) => {
   })
 })
 
-// error handler
+// Error handler
 app.use((err, req, res, next) => {
-  console.log(err)
+  log.error(err)
+
   res.status(err.status || 500)
   res.json({
     code: 500,
