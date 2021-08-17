@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-07-16 16:34:03
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-08-02 16:05:30
+ * @LastEditTime: 2021-08-17 16:28:34
  */
 
 const express = require('express')
@@ -15,15 +15,14 @@ const internalIp = require('internal-ip')
 const chalk = require('chalk')
 
 const log = require('./utils/log')
-const indexRouter = require('./routes/index')
+// const indexRouter = require('./routes/index')
 const getEnv = require('./config/index')
+const { version } = require('../package.json')
 
 const ipv4 = internalIp.v4.sync()
 
-console.log(getEnv('port'))
-
 const app = express()
-const port = 3000
+const port = getEnv('SERVER_PORT')
 
 app.use(logger('dev'))
 app.use(cors())
@@ -32,7 +31,28 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/', indexRouter)
+// app.use('/', indexRouter)
+
+app.all('*', (req, res, next) => {
+  // console.log({ req })
+  res.json({
+    success: true,
+    code: 200,
+    msg: 'Success!',
+    data: {
+      timestamp: new Date().getTime(),
+      version,
+      method: req.method,
+      url: req.url,
+      path: req.path,
+      ip: req.ip,
+      headers: req.headers,
+      params: req.params,
+      query: req.query,
+      body: req.body,
+    },
+  })
+})
 
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -53,7 +73,7 @@ app.use((err, req, res, next) => {
   })
 })
 
-app.set('port', port)
+// app.set('port', port)
 
 app.listen(port, () => {
   console.log(

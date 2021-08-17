@@ -6,15 +6,18 @@
   "author": "SunSeekerX",
   "main": "src/app.js",
   "scripts": {
-    "serve": "nodemon src/app.js",
+    "serve": "cross-env NODE_ENV=development nodemon src/app.js",
+    "start:prod": "cross-env NODE_ENV=production node src/app",
+    "build:docker": "docker build -t node-express-starter .",
     "lint": "eslint \"src/**/*.js\" --fix",
     "lint:lint-staged": "lint-staged",
     "gc": "git add -A && git-cz && git pull && git push",
     "up": "yarn upgrade-interactive",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "sort-package-json": "npx sort-package-json"
   },
   "dependencies": {
-    "chalk": "^4.1.1",
+    "chalk": "^4.1.2",
     "cookie-parser": "~1.4.5",
     "cors": "^2.8.5",
     "express": "~4.17.1",
@@ -23,13 +26,17 @@
     "morgan": "~1.10.0"
   },
   "devDependencies": {
-    "eslint": "^7.30.0",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-import": "^2.24.0",
     "eslint-plugin-prettier": "^3.4.0",
     "husky": "^7.0.1",
-    "lint-staged": "^11.0.1",
+    "lint-staged": "^11.1.2",
     "nodemon": "^2.0.12",
     "prettier": "^2.3.2"
   }

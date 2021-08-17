@@ -10,8 +10,6 @@ NodeJS Express api 项目启动模板。集成常用依赖，以及提交代码�
 - `internal-ip` 获取内网 ip
 - `morgan` 请求日志中间件
 
-
-
 ## 📌 快速上手
 
 **克隆项目**
@@ -42,7 +40,35 @@ yarn serve
 npm run serve
 ```
 
+## 📌 部署
 
+### Docker
 
+**构建镜像**
 
+> 请确保构建环境已经安装了 docker！
 
+```shell
+yarn build:docker
+```
+
+**查看镜像**
+
+```shell
+docker images
+```
+
+```
+REPOSITORY             TAG       IMAGE ID       CREATED         SIZE
+node-express-starter   latest    5961aa33df6f   3 minutes ago   152MB
+```
+
+**运行镜像**
+
+> `/Users/ssx/code/nodejs/node-express-starter/env.production.yaml` 为你的配置文件路径。
+
+```shell
+docker run -d -p 3000:3000 --name=node-express-starter -v /Users/ssx/code/nodejs/node-express-starter/env.production.yaml:/app/env.production.yaml --restart=always node-express-starter
+```
+
+### pm2
