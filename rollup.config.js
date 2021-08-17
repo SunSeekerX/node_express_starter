@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-08-17 17:46:10
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-08-17 18:02:41
+ * @LastEditTime: 2021-08-17 18:06:09
  */
 
 import commonjs from '@rollup/plugin-commonjs'
@@ -15,7 +15,7 @@ export default {
   output: {
     file: 'dist/bundle.js',
     format: 'cjs',
-    exports: 'auto'
+    exports: 'auto',
   },
   plugins: [commonjs(), json(), nodeResolve()],
 }

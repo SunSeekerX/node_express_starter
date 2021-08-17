@@ -1,10 +1,10 @@
 /**
- * @name: prettier 配置
+ * prettier 配置
  * @url https://prettier.io/docs/en/options.html
  * @author: SunSeekerX
  * @Date: 2020-07-20 16:34:25
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-09 18:33:25
+ * @LastEditTime: 2021-08-17 18:06:22
  */
 
 module.exports = {
