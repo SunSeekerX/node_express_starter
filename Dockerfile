@@ -15,6 +15,7 @@ WORKDIR /app
 COPY src /app/src/
 COPY package.json /app
 COPY ecosystem.config.js /app
+COPY env.production.yaml /app
 
 # Install app dependencies
 ENV NPM_CONFIG_LOGLEVEL warn

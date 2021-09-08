@@ -8,7 +8,8 @@
   "scripts": {
     "serve": "cross-env NODE_ENV=development nodemon src/app.js",
     "start:prod": "cross-env NODE_ENV=production node src/app",
-    "build:docker": "docker build -t node-express-starter .",
+    "build": "rollup -c",
+    "build:docker": "docker build -t node-express-starter:latest .",
     "lint": "eslint \"src/**/*.js\" --fix",
     "lint:lint-staged": "lint-staged",
     "gc": "git add -A && git-cz && git pull && git push",
@@ -38,6 +39,7 @@
     "husky": "^7.0.1",
     "lint-staged": "^11.1.2",
     "nodemon": "^2.0.12",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "rollup-plugin-filesize": "^9.1.1"
   }
 }
