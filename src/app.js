@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-07-16 16:34:03
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-08-17 16:28:34
+ * @LastEditTime: 2021-09-08 11:44:58
  */
 
 const express = require('express')
@@ -76,6 +76,7 @@ app.use((err, req, res, next) => {
 // app.set('port', port)
 
 app.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log(
     `
     App running at:
