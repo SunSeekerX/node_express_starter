@@ -1,5 +1,7 @@
 # node-express-starter
 
+> 在线访问测试：[https://express.yoouu.cn/](https://express.yoouu.cn/)
+
 ## 📌 简介
 
 NodeJS Express api 项目启动模板。集成常用依赖，以及提交代码格式化、代码校验等。
@@ -72,3 +74,7 @@ docker run -d -p 3000:3000 --name=node-express-starter -v /Users/ssx/code/nodejs
 ```
 
 ### pm2
+
+```
+pm2 start ecosystem.config.js --env production
+```
