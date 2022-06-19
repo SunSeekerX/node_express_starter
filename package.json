@@ -10,37 +10,37 @@
     "start:prod": "cross-env NODE_ENV=production node src/app",
     "build": "rollup -c",
     "build:docker": "docker build -t node-express-starter:latest .",
-    "lint": "eslint \"src/**/*.js\" --fix",
+    "lint:eslint": "eslint \"src/**/*.js\" --fix",
     "lint:lint-staged": "lint-staged",
     "gc": "git add -A && git-cz && git pull && git push",
-    "up": "yarn upgrade-interactive",
-    "prepare": "husky install",
-    "sort-package-json": "npx sort-package-json"
+    "postinstall": "husky install",
+    "pkg:sort": "npx sort-package-json"
   },
   "dependencies": {
     "chalk": "^4.1.2",
-    "cookie-parser": "~1.4.5",
+    "cookie-parser": "~1.4.6",
     "cors": "^2.8.5",
-    "express": "~4.17.1",
+    "express": "~4.18.1",
     "internal-ip": "^6.2.0",
     "js-yaml": "^4.1.0",
     "morgan": "~1.10.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-node-resolve": "^13.3.0",
     "cross-env": "^7.0.3",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.24.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "husky": "^7.0.1",
-    "lint-staged": "^11.1.2",
-    "nodemon": "^2.0.12",
-    "prettier": "^2.3.2",
-    "rollup": "^2.56.3",
-    "rollup-plugin-filesize": "^9.1.1"
-  }
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.2",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.7.1",
+    "rollup": "^2.75.6",
+    "rollup-plugin-filesize": "^9.1.2"
+  },
+  "packageManager": "yarn@3.2.1"
 }

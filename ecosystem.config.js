@@ -1,11 +1,3 @@
-/**
- * @name:
- * @author: SunSeekerX
- * @Date: 2020-08-14 17:11:32
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-08-17 16:45:51
- */
-
 module.exports = {
   apps: [
     {
