@@ -1,15 +1,6 @@
-/**
- * eslint 规则
- * @author: SunSeekerX
- * @Date: 2021-07-16 17:51:03
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-16 17:56:50
- */
-
-module.exports = {
+export default {
   env: {
-    commonjs: true,
-    es2021: true,
+    es2022: true,
     node: true,
   },
   extends: ['airbnb-base', 'prettier'],
@@ -19,7 +10,8 @@ module.exports = {
     SharedArrayBuffer: 'readonly',
   },
   parserOptions: {
-    ecmaVersion: 12,
+    ecmaVersion: 2022,
+    sourceType: 'module',
   },
   rules: {
     'prettier/prettier': 'error',
@@ -27,5 +19,12 @@ module.exports = {
     'no-param-reassign': 'off',
     camelcase: 'off',
     'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'always',
+      },
+    ],
   },
 }

@@ -45,7 +45,8 @@ lerna-debug.log*
 env.**
 !env.example.yaml
 
-# Another files
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
+
+/uploads/*

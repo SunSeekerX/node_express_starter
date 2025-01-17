@@ -1,22 +1,36 @@
 module.exports = {
   apps: [
     {
-      name: 'node-express-starter',
-      script: 'src/app.js',
+      script: 'dist/main.js',
       watch: false,
       min_uptime: '60s',
       max_restarts: 3,
-      // log 顯示時間
       time: true,
-      // 錯誤 log 的指定位置
       error_file: './logs/err.log',
-      // 正常輸出 log 的指定位置
       out_file: './logs/app.log',
+
+      // 开发环境
       env: {
+        name: 'node_express_starter_dev',
         NODE_ENV: 'development',
+        APP_ENV: 'development',
+        TZ: 'Asia/Shanghai',
       },
+
+      // 测试环境
+      env_test: {
+        name: 'node_express_starter_test',
+        NODE_ENV: 'test',
+        APP_ENV: 'test',
+        TZ: 'Asia/Shanghai',
+      },
+
+      // 生产环境
       env_production: {
+        name: 'node_express_starter_prod',
         NODE_ENV: 'production',
+        APP_ENV: 'production',
+        TZ: 'Asia/Shanghai',
       },
     },
   ],

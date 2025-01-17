@@ -1,11 +1,3 @@
-/**
- * 打包配置
- * @author: SunSeekerX
- * @Date: 2021-08-17 17:46:10
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-08 10:52:50
- */
-
 import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
