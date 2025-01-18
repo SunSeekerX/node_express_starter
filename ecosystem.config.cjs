@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      script: 'dist/main.js',
+      script: 'src/app.js',
       watch: false,
       min_uptime: '60s',
       max_restarts: 3,
