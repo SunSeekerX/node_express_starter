@@ -76,5 +76,5 @@ docker run -d -p 3000:3000 --name=node-express-starter -v /Users/ssx/code/nodejs
 ### pm2
 
 ```
-pm2 start ecosystem.config.js --env production
+pm2 start ecosystem.config.cjs --env production
 ```
